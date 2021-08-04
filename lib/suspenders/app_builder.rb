@@ -84,7 +84,6 @@ module Suspenders
       generate.request_specs false
       generate.routing_specs false
       generate.stylesheets false
-      generate.test_framework :rspec
       generate.view_specs false
     end
 
@@ -148,10 +147,7 @@ module Suspenders
       create_file ".ruby-version", "#{Suspenders::RUBY_VERSION}\n"
     end
 
-    def configure_i18n_for_missing_translations
-      raise_on_missing_translations_in("development")
-      raise_on_missing_translations_in("test")
-    end
+
 
     def configure_action_mailer_in_specs
       copy_file "action_mailer.rb", "spec/support/action_mailer.rb"
